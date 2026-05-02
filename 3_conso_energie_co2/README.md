@@ -20,11 +20,9 @@ Split 80/20 Train/test, kfold = 10, random_state = 42, and test multiple models:
 - XGBoost: gradient boosted trees that build models sequentially, each correcting previous errors. Often performs great in practice. (in our case ir probably doesn't have enough samples).
    
     c. **Support Vector Machine**
-   
 - SVR (support vector regression): finds the optimal hyperplane that best fits the data within a margin of tolerance. Good for high-dimensional spaces. It's an alternative non-linear approach using kernel methods, useful for comparison.
    
     d. **Baseline**
-   
 - Dummy Regressor: always predicts the mean of the training data. It's the minimum acceptable performance - any model must beat this. If our models don't significantly outperform this baseline, they're not adding value.
 We observed overfitting, and clean datasets outperformed the ones with outliers.
 
@@ -37,26 +35,25 @@ Best performing models were:
 Energy - ElasticNet  
 R2 = 0.729
 
-CO2 - Lasso
-R2 = 0.629
+CO2 - Lasso  
+R2 = 0.629  
 MAE = 75
 
 4. Check if energystar is useful.
 We impute a lot of data (thirs is nulls) for only a 1-2% performance gain, and this is just a performance evaluation. Since we should only use structural data, it's better to omit it.
-5. Optimization and top features.
-Top features are surface, top three types by surface are laboratory, medical office, and hotel in different order for the targets.
-ElasticNet (Energy) best :
-CV R² = 0.727
+5. Optimization and top features.  
+Top features are surface, top three types by surface are laboratory, medical office, and hotel in different order for the targets.  
+ElasticNet (Energy) best :  
+CV R² = 0.727  
 Test R² = 0.673
 
-Lasso (CO2) best :
-CV R² = 0.575
-Test R² = 0.564
+Lasso (CO2) best :  
+CV R² = 0.575  
+Test R² = 0.564  
 
-Good results for energy, ok results for CO2 but acceptable since it's a real messy data.
-
+Good results for energy, ok results for CO2 but acceptable since it's a real messy data.  
 We tested the logarithmic transformation of GHG, but it significantly degraded performance (R² dropped from 0.564 to -266), so we retained the original scale.
 
 ## Conclusion.
-This analysis demonstrates that structural variables alone can effectively predict building energy use and CO₂ emissions, with ElasticNet (R²=0.673) and Lasso (R²=0.564) delivering robust results. While energy predictions are strong, CO₂ emissions are noisier and achieve acceptable accuracy. 
+This analysis demonstrates that structural variables alone can effectively predict building energy use and CO₂ emissions, with ElasticNet (R²=0.673) and Lasso (R²=0.564) delivering robust results. While energy predictions are strong, CO₂ emissions are noisier and achieve acceptable accuracy.  
 The study highlights how important is data cleaning, feature selection, and model regularization in handling real-world datasets. Future work could explore non-linear models or additional structural features to further improve performance.
