@@ -11,10 +11,10 @@ Split 80/20 Train/test, kfold = 10, random_state = 42, and test multiple models:
 
     a. **Linear**
    
-        + Linear: simple linear model without regularization. Fast and interpretable (explainable/ easy to understand how each feature affects the predictions thanks to coefficients) but prone to overfitting with many features (our case).
-        - Ridge: linear regression with L2 regularization.Hadles multicollinearity well by shrinking correlated feature coefficients.
-        - Lasso: linear regression with L1 regularization. Automatically selects features by pushing less important coefficients to zero.
-        - ElasticNet: L1 + L2 regularization. Best of both worlds - handles multicollinearity and performs feature selection.
+- Linear: simple linear model without regularization. Fast and interpretable (explainable/ easy to understand how each feature affects the predictions thanks to coefficients) but prone to overfitting with many features (our case).
+- Ridge: linear regression with L2 regularization.Hadles multicollinearity well by shrinking correlated feature coefficients.
+- Lasso: linear regression with L1 regularization. Automatically selects features by pushing less important coefficients to zero.
+- ElasticNet: L1 + L2 regularization. Best of both worlds - handles multicollinearity and performs feature selection.
    
     b. **Tree-Based**
    
@@ -32,8 +32,8 @@ We observed overfitting, and clean datasets outperformed the ones with outliers.
 
 Metrics:
 + R² (R-squared): proportion of the target's variance that the model explains. Maximize (closer to 1 = better).
-MAE (Mean Absolute Error): average absolute difference between predictions and actual values (in the original units of the target). Minimize (closer to 0 = better). For interpretability. Robust to outliers.
-RMSE (Root Mean Squared Error): identifies models that fail badly on extreme cases. Minimize (closer to 0 = better). Large errors are penalized more heavily. Sensitive to outliers.
++ MAE (Mean Absolute Error): average absolute difference between predictions and actual values (in the original units of the target). Minimize (closer to 0 = better). For interpretability. Robust to outliers.
++ RMSE (Root Mean Squared Error): identifies models that fail badly on extreme cases. Minimize (closer to 0 = better). Large errors are penalized more heavily. Sensitive to outliers.
 
 Best performing models were:
 Energy - ElasticNet
