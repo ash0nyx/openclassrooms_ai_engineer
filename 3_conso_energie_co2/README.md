@@ -33,8 +33,8 @@ Metrics:
 + MAE (Mean Absolute Error): average absolute difference between predictions and actual values (in the original units of the target). Minimize (closer to 0 = better). For interpretability. Robust to outliers.
 + RMSE (Root Mean Squared Error): identifies models that fail badly on extreme cases. Minimize (closer to 0 = better). Large errors are penalized more heavily. Sensitive to outliers.
 
-Best performing models were:
-Energy - ElasticNet
+Best performing models were:  
+Energy - ElasticNet  
 R2 = 0.729
 
 CO2 - Lasso
