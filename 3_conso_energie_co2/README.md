@@ -10,24 +10,22 @@ One-hot and GFA-weighted encoding, create 3 new features, delete redundant or ha
 Split 80/20 Train/test, kfold = 10, random_state = 42, and test multiple models:
 
     a. **Linear**
-   
 - Linear: simple linear model without regularization. Fast and interpretable (explainable/ easy to understand how each feature affects the predictions thanks to coefficients) but prone to overfitting with many features (our case).
 - Ridge: linear regression with L2 regularization.Hadles multicollinearity well by shrinking correlated feature coefficients.
 - Lasso: linear regression with L1 regularization. Automatically selects features by pushing less important coefficients to zero.
 - ElasticNet: L1 + L2 regularization. Best of both worlds - handles multicollinearity and performs feature selection.
    
-    b. **Tree-Based**
-   
-        - Random Forest: ensemble of decision trees trained on random subsets of data and features. Reduces overfitting through averaging.
-        - XGBoost: gradient boosted trees that build models sequentially, each correcting previous errors. Often performs great in practice. (in our case ir probably doesn't have enough samples).
+    b. **Tree-Based**   
+- Random Forest: ensemble of decision trees trained on random subsets of data and features. Reduces overfitting through averaging.
+- XGBoost: gradient boosted trees that build models sequentially, each correcting previous errors. Often performs great in practice. (in our case ir probably doesn't have enough samples).
    
     c. **Support Vector Machine**
    
-        - SVR (support vector regression): finds the optimal hyperplane that best fits the data within a margin of tolerance. Good for high-dimensional spaces. It's an alternative non-linear approach using kernel methods, useful for comparison.
+- SVR (support vector regression): finds the optimal hyperplane that best fits the data within a margin of tolerance. Good for high-dimensional spaces. It's an alternative non-linear approach using kernel methods, useful for comparison.
    
     d. **Baseline**
    
-        - Dummy Regressor: always predicts the mean of the training data. It's the minimum acceptable performance - any model must beat this. If our models don't significantly outperform this baseline, they're not adding value.
+- Dummy Regressor: always predicts the mean of the training data. It's the minimum acceptable performance - any model must beat this. If our models don't significantly outperform this baseline, they're not adding value.
 We observed overfitting, and clean datasets outperformed the ones with outliers.
 
 Metrics:
