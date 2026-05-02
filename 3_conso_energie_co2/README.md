@@ -31,7 +31,7 @@ Split 80/20 Train/test, kfold = 10, random_state = 42, and test multiple models:
 We observed overfitting, and clean datasets outperformed the ones with outliers.
 
 Metrics:
-R² (R-squared): proportion of the target's variance that the model explains. Maximize (closer to 1 = better).
++ R² (R-squared): proportion of the target's variance that the model explains. Maximize (closer to 1 = better).
 MAE (Mean Absolute Error): average absolute difference between predictions and actual values (in the original units of the target). Minimize (closer to 0 = better). For interpretability. Robust to outliers.
 RMSE (Root Mean Squared Error): identifies models that fail badly on extreme cases. Minimize (closer to 0 = better). Large errors are penalized more heavily. Sensitive to outliers.
 
