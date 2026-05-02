@@ -8,8 +8,10 @@ Nulls, redundant data, not structural, derived from targets, impossible, outlier
 One-hot and GFA-weighted encoding, create 3 new features, delete redundant or having too many distint values columns, trim the distribution of a couple of top and bottom percentiles of target intensities (targets / surface) to eliminate outliers. 
 3. Train the models.
 Split 80/20 Train/test, kfold = 10, random_state = 42, and test multiple models:
+
     a. **Linear**
-        - Linear: simple linear model without regularization. Fast and interpretable (explainable/ easy to understand how each feature affects the predictions thanks to coefficients) but prone to overfitting with many features (our case).
+   
+        * Linear: simple linear model without regularization. Fast and interpretable (explainable/ easy to understand how each feature affects the predictions thanks to coefficients) but prone to overfitting with many features (our case).
         - Ridge: linear regression with L2 regularization.Hadles multicollinearity well by shrinking correlated feature coefficients.
         - Lasso: linear regression with L1 regularization. Automatically selects features by pushing less important coefficients to zero.
         - ElasticNet: L1 + L2 regularization. Best of both worlds - handles multicollinearity and performs feature selection.
